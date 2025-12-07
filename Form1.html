@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>𝐊𝐈𝐌𝐎 | X5Coder - مطور برمجيات احترافي</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blood-red: #b30000;
+            --dark-red: #8b0000;
+            --glow-red: #ff3333;
+            --black: #0f1115;
+            --gray: #6b7280;
+            --light: #fdfdfd;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background: var(--light);
+            color: var(--black);
+            font-family: 'Tajawal', 'El Messiri', system-ui, sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+            background-size: 64px 64px;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.5;
+        }
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(179,0,0,0.05), transparent 30%),
+                radial-gradient(circle at 80% 70%, rgba(179,0,0,0.08), transparent 35%),
+                linear-gradient(120deg, rgba(0,0,0,0.04), transparent 40%);
+            mix-blend-mode: multiply;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .chip {
+            border: 1.5px solid rgba(179, 0, 0, 0.25);
+            color: var(--black);
+            background: rgba(179, 0, 0, 0.06);
+            border-radius: 9999px;
+            padding: 10px 16px;
+            font-size: 0.95rem;
+            display: inline-flex;
+            gap: 8px;
+            align-items: center;
+            font-weight: 700;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .chip:hover {
+            background: rgba(179, 0, 0, 0.14);
+            border-color: var(--blood-red);
+            transform: translateY(-2px);
+        }
+        .card {
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 18px;
+            padding: 22px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            inset: -80% 40%;
+            background: radial-gradient(circle, rgba(179,0,0,0.1), transparent 60%);
+            transform: rotate(18deg);
+        }
+        .card-content {
+            position: relative;
+            z-index: 1;
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(179, 0, 0, 0.16);
+            border-color: rgba(179, 0, 0, 0.25);
+        }
+        .section-title {
+            display:flex;
+            align-items:center;
+            gap:12px;
+            font-family:'El Messiri', sans-serif;
+            font-weight:800;
+            font-size:1.6rem;
+            color:var(--black);
+        }
+        .glowing-dot {
+            width:14px;
+            height:14px;
+            background:var(--glow-red);
+            border-radius:50%;
+            box-shadow: 0 0 16px var(--glow-red), 0 0 32px rgba(255,51,51,0.35);
+            animation:pulse 2.3s infinite;
+        }
+        @keyframes pulse {
+            0%,100%{transform:scale(1);}
+            50%{transform:scale(1.1);}
+        }
+        .glow-text {
+            position:relative;
+            display:inline-block;
+        }
+        .glow-text::after {
+            content:'';
+            position:absolute;
+            left:0;
+            bottom:-4px;
+            width:100%;
+            height:4px;
+            background:linear-gradient(90deg, transparent, var(--blood-red), transparent);
+            border-radius:12px;
+            opacity:0.8;
+        }
+        .hero-wrap {
+            position:relative;
+            width:100%;
+            display:flex;
+            justify-content:center;
+        }
+        .hero-frame {
+            position: relative;
+            padding: 10px;
+            border-radius: 22px;
+            background: linear-gradient(135deg, rgba(179,0,0,0.14), rgba(0,0,0,0.06));
+            box-shadow: 0 18px 40px rgba(179,0,0,0.22);
+        }
+        .hero-img {
+            aspect-ratio: 1 / 1;
+            border-radius: 18px;
+            overflow: hidden;
+            position: relative;
+            border: 3px solid rgba(179, 0, 0, 0.18);
+            animation: heroPop 1.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            transform: translateY(36px) scale(0.93) rotate(-1deg);
+            opacity: 0;
+            box-shadow: 0 18px 45px rgba(0,0,0,0.15);
+        }
+        @keyframes heroPop {
+            to {
+                transform: translateY(0) scale(1) rotate(0deg);
+                opacity:1;
+            }
+        }
+        .reveal {
+            opacity:0;
+            transform: translateY(30px) scale(0.98);
+            filter: blur(6px);
+            transition: all .8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.show {
+            opacity:1;
+            transform: translateY(0) scale(1);
+            filter: blur(0);
+        }
+        .reveal.hide {
+            opacity:0;
+            transform: translateY(-12px) scale(0.98);
+            filter: blur(6px);
+            transition: all .6s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+        }
+        .delay-1{transition-delay:.1s!important;}
+        .delay-2{transition-delay:.2s!important;}
+        .delay-3{transition-delay:.3s!important;}
+        .delay-4{transition-delay:.4s!important;}
+        .contact-card {
+            background:#0f1115;
+            color:#fff;
+            border-radius:999px;
+            padding:14px 20px;
+            display:inline-flex;
+            gap:10px;
+            align-items:center;
+            font-weight:700;
+            border:1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.14);
+            transition: all .35s ease;
+        }
+        .contact-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(179,0,0,0.45);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.22);
+        }
+        ::-webkit-scrollbar{width:10px;}
+        ::webkit-scrollbar-track{background:rgba(0,0,0,0.04);}
+        ::-webkit-scrollbar-thumb{background:var(--blood-red); border-radius:8px;}
+        ::-webkit-scrollbar-thumb:hover{background:var(--dark-red);}
+        
+        /* أيقونات التواصل - معدلة */
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 8px rgba(179, 0, 0, 0.3));
+        }
+    </style>
+</head>
+<body class="relative min-h-screen" id="top">
+    <audio id="anthem" src="https://b.top4top.io/m_3627nj2w21.mp3" preload="auto"></audio>
+    <main class="relative z-10 max-w-6xl mx-auto px-5 pb-20 pt-6">
+        <header class="py-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div class="flex items-center gap-3">
+                <div class="chip">مرحباً</div>
+                <div class="chip">Hello</div>
+                <div class="chip">Bonjour</div>
+            </div>
+            <div class="flex gap-3 text-sm text-gray-600 font-semibold items-center">
+                <span class="flex items-center gap-2">
+                    <span class="glowing-dot"></span>
+                    Full Stack Android & AI Web
+                </span>
+                <span class="hidden sm:inline text-gray-400">|</span>
+                <span class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-black"></span>
+                    Problem Solver
+                </span>
+            </div>
+        </header>
+
+        <section class="grid md:grid-cols-[1.1fr_0.9fr] gap-8 items-center pt-6">
+            <div class="flex flex-col gap-5 reveal delay-1">
+                <div class="text-sm font-bold text-[var(--blood-red)] uppercase tracking-[0.22em]">𝐊𝐈𝐌𝐎 • X5Coder</div>
+                <h1 class="text-3xl sm:text-4xl font-black leading-tight">
+                    مطور برمجيات احترافي من القاهرة، 
+                    <span class="text-[var(--blood-red)] glow-text">Computer Science</span>
+                    بشغف لصناعة تطبيقات أندرويد ومواقع ذكية بلمسة إبداعية.
+                </h1>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    خبرة 9 سنوات في Java، Flutter، Python، C++، وبناء مواقع بالذكاء الاصطناعي مع أمان وتحكم كامل. أتنقل بين Android Studio، Sketchware Pro، و Flutter لابتكار منتجات كاملة.
+                </p>
+                <div class="flex flex-wrap gap-3">
+                    <span class="chip">Android Studio</span>
+                    <span class="chip">Flutter</span>
+                    <span class="chip">Java</span>
+                    <span class="chip">AI Web</span>
+                    <span class="chip">Problem Solving</span>
+                    <span class="chip">Firebase</span>
+                </div>
+                <div class="flex gap-3 flex-wrap">
+                    <a href="#projects" class="chip bg-[var(--blood-red)] text-white border-none shadow-lg">أعمالي المميزة</a>
+                    <a href="#contact" class="chip">تواصل سريع</a>
+                </div>
+            </div>
+            <div class="hero-wrap reveal delay-2">
+                <div class="hero-frame w-[90%] max-w-[400px]">
+                    <div class="hero-img">
+                        <img src="https://i.ibb.co/k2jTrFdG/1000103710.jpg" alt="صورة 𝐊𝐈𝐌𝐎" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="mt-4 text-center font-extrabold text-2xl text-[var(--black)]">𝐊𝐈𝐌𝐎 <span class="text-[var(--blood-red)]">/</span> X5Coder</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-14 grid lg:grid-cols-3 gap-6">
+            <div class="card reveal delay-1 lg:col-span-2">
+                <div class="card-content">
+                    <div class="section-title"><span class="glowing-dot"></span><h2>من أنا؟</h2></div>
+                    <p class="mt-3 text-gray-600 leading-relaxed text-lg">
+                        أنا <span class="font-bold text-black">𝐊𝐈𝐌𝐎</span> عمري 18 سنة، معروف باسم <span class="font-black text-[var(--blood-red)]">X5Coder</span>. مهندس برمجيات أفضّل بناء أفكار كاملة على جمع الشهادات. أصنع بوتات تيليجرام بـ Python و PHP وأعشق تصميم الواجهات بتفاصيل دقيقة وغير معتادة.
+                    </p>
+                    <div class="mt-5 grid sm:grid-cols-2 gap-3 text-gray-800 font-semibold">
+                        <div class="flex items-center gap-2">• 9 سنوات خبرة متنامية في التطوير</div>
+                        <div class="flex items-center gap-2">• شغف مستمر بالمشاريع الضخمة النافعة</div>
+                        <div class="flex items-center gap-2">• تعامل ذكي مع الذكاء الاصطناعي (Vibe Coding)</div>
+                        <div class="flex items-center gap-2">• تصميمات جريئة بلمسة سيبرانية</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card reveal delay-2">
+                <div class="card-content">
+                    <div class="section-title"><span class="glowing-dot"></span><h2>موجز سريع</h2></div>
+                    <ul class="mt-4 space-y-2 text-gray-600 font-semibold">
+                        <li>• التخصص: Computer Science</li>
+                        <li>• الجامعة: حاسبات ومعلومات</li>
+                        <li>• العمل: أندرويد، مواقع بالذكاء الاصطناعي، بوتات تيليجرام</li>
+                        <li>• الأدوات: Android Studio، Sketchware Pro، Flutter، Firebase</li>
+                        <li>• الاسم: كريم / 𝐊𝐈𝐌𝐎</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-14 grid lg:grid-cols-2 gap-6" id="skills">
+            <div class="card reveal delay-1">
+                <div class="card-content">
+                    <div class="section-title"><span class="glowing-dot"></span><h2>مهارات وتقنيات</h2></div>
+                    <div class="mt-3 flex flex-wrap gap-2">
+                        <span class="chip">Java</span>
+                        <span class="chip">Flutter</span>
+                        <span class="chip">Python</span>
+                        <span class="chip">C++</span>
+                        <span class="chip">Firebase Integration</span>
+                        <span class="chip">AI Web Building</span>
+                        <span class="chip">Security Mindset</span>
+                        <span class="chip">Problem Solving</span>
+                        <span class="chip">UI/UX Craft</span>
+                    </div>
+                    <p class="mt-5 text-gray-600">أبني تطبيقات بواجهات فاخرة مع أمان شامل وتحكم كامل في البيانات، وأتعامل مع الذكاء الاصطناعي بمهارة Vibe Coding.</p>
+                </div>
+            </div>
+            <div class="card reveal delay-2">
+                <div class="card-content">
+                    <div class="section-title"><span class="glowing-dot"></span><h2>بيئات العمل</h2></div>
+                    <div class="mt-3 grid grid-cols-2 gap-3">
+                        <div class="chip w-full justify-center">Android Studio</div>
+                        <div class="chip w-full justify-center">Sketchware Pro</div>
+                        <div class="chip w-full justify-center">Flutter</div>
+                        <div class="chip w-full justify-center">VS Code</div>
+                    </div>
+                    <p class="mt-5 text-gray-600">أتنقل بينها بسلاسة لصنع تطبيقات جاهزة للنشر مع تكامل Firebase كامل.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-14" id="projects">
+            <div class="section-title reveal delay-1"><span class="glowing-dot"></span><h2>مشاريعي الأبرز</h2></div>
+            <div class="mt-6 grid md:grid-cols-2 gap-6">
+                <div class="card reveal delay-1">
+                    <div class="card-content space-y-3">
+                        <div class="flex items-center gap-3">
+                            <div class="px-4 py-2 rounded-full bg-[var(--blood-red)] text-white font-bold">Streamo (Beta)</div>
+                            <a class="text-[var(--blood-red)] font-bold underline" href="https://apkpure.com/ar/streamo/com.Streamo/download" target="_blank" rel="noopener">رابط التنزيل</a>
+                        </div>
+                        <p class="text-gray-600">ابتكرت فكرة سحب روابط الأفلام من مواقع المشاهدة لعرضها بأعلى جودة وبدون إعلانات على أي مشغل. التطبيق نال إعجاب المستخدمين رغم كونه تجريبياً، والإصدار النهائي قادم مع موقع رسمي ورفع على جوجل بلاي.</p>
+                    </div>
+                </div>
+                <div class="card reveal delay-2">
+                    <div class="card-content space-y-3">
+                        <div class="flex items-center gap-3">
+                            <div class="px-4 py-2 rounded-full bg-[var(--blood-red)] text-white font-bold">Osiris Store</div>
+                            <a class="text-[var(--blood-red)] font-bold underline" href="https://play.google.com/store/apps/details?id=com.teamdroid.osiris.user" target="_blank" rel="noopener">Google Play</a>
+                        </div>
+                        <p class="text-gray-600">تطبيق بيع سلع بنظام متكامل أونلاين، يضم كل الميزات الممكنة لتجارة إلكترونية متقدمة، مع اعتماد شامل على Firebase لإدارة المستخدمين والبيانات.</p>
+                    </div>
+                </div>
+                <div class="card reveal delay-3">
+                    <div class="card-content space-y-3">
+                        <div class="px-4 py-2 rounded-full bg-[var(--blood-red)] text-white font-bold w-fit">بوتات تيليجرام</div>
+                        <p class="text-gray-600">صناعة بوتات ذكية بـ Python و PHP، مع دمج نماذج الذكاء الاصطناعي للتنفيذ التلقائي والردود الذكية.</p>
+                    </div>
+                </div>
+                <div class="card reveal delay-4">
+                    <div class="card-content space-y-3">
+                        <div class="px-4 py-2 rounded-full bg-[var(--blood-red)] text-white font-bold w-fit">مواقع بالذكاء الاصطناعي</div>
+                        <p class="text-gray-600">مواقع متكاملة بواجهات مصممة بعناية وأمان شامل، مع تحكم كامل وتجارب مستخدم فاخرة.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-14 grid lg:grid-cols-2 gap-6">
+            <div class="card reveal delay-1">
+                <div class="card-content">
+                    <div class="section-title"><span class="glowing-dot"></span><h2>الكيان والسمعة</h2></div>
+                    <p class="mt-3 text-gray-600">معروف باسم <span class="font-bold text-black">X5Coder</span>. أدير قناتين على تليجرام:</p>
+                    <ul class="mt-3 space-y-2 text-gray-700 font-semibold">
+                        <li>• قناة <a href="https://t.me/X5_Code" target="_blank" class="text-[var(--blood-red)] font-bold">X5Coder</a> بها 1300 متابع لمحتوى ومشاريع جاهزة.</li>
+                        <li>• قناة <a href="https://t.me/Shadow_Dev_2007" target="_blank" class="text-[var(--blood-red)] font-bold">Shadow</a> بها 5000 متابع للأمن السيبراني والهندسة العكسية.</li>
+                    </ul>
+                    <p class="mt-3 text-gray-600">قناة YouTube: <a href="https://www.youtube.com/@Shadow-Dev-2007" target="_blank" class="text-[var(--blood-red)] font-bold">Shadow</a> (6000 متابع) تقدم شروحات كاملة في الأمن السيبراني.</p>
+                </div>
+            </div>
+            <div class="card reveal delay-2">
+                <div class="card-content">
+                    <div class="section-title"><span class="glowing-dot"></span><h2>لماذا أتعلم دون توقف؟</h2></div>
+                    <p class="mt-3 text-gray-600 leading-relaxed">لا أنهي الكورسات بالكامل لأنني أتحول سريعاً إلى بناء مشاريع حقيقية تخدم الناس. الخبرة بالنسبة لي تأتي من إطلاق أفكار كاملة، لا من شهادة في نهاية المسار.</p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="chip">تفاصيل دقيقة</span>
+                        <span class="chip">تصاميم غير معتادة</span>
+                        <span class="chip">إبداع متجدد</span>
+                        <span class="chip">تطبيقات واقعية</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-14 grid lg:grid-cols-2 gap-6">
+            <div class="card reveal delay-1">
+                <div class="card-content">
+                    <div class="section-title"><span class="glowing-dot"></span><h2>جدول التطور</h2></div>
+                    <ul class="mt-3 space-y-2 text-gray-700 font-semibold">
+                        <li>• 9 سنوات في التطوير – أندرويد ومواقع.</li>
+                        <li>• انتقال مستمر بين Java و Flutter و Python.</li>
+                        <li>• دمج Firebase وخدماته لأي مشروع.</li>
+                        <li>• خبرة أمنية من خلال كيان Shadow.</li>
+                        <li>• بناء مشاريع كاملة بدلاً من شهادات.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card reveal delay-2">
+                <div class="card-content">
+                    <div class="section-title"><span class="glowing-dot"></span><h2>الألعاب والهوايات</h2></div>
+                    <p class="mt-3 text-gray-600">PUBG Mobile و Rainbow 6 Siege Mobile.<br>آيدي ببجي: <span class="font-bold text-black">51907934458</span>ْ</p>
+                    <div class="mt-4 flex gap-2 flex-wrap">
+                        <span class="chip">Gaming</span>
+                        <span class="chip">Problem Solving</span>
+                        <span class="chip">UI Design</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-16" id="contact">
+            <div class="section-title reveal delay-1"><span class="glowing-dot"></span><h2>تواصل معي</h2></div>
+            
+            <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 justify-center reveal delay-2">
+                <div class="contact-card" id="copy-email">
+                    <span class="text-[var(--blood-red)]">✉️</span>
+                    <span>البريد الالكتروني : lava4ggaming@gmail.com</span>
+                </div>
+                <div class="contact-card">
+                    <span class="text-[var(--blood-red)]">📱</span>
+                    <span>رقم الهاتف : 01009341792</span>
+                </div>
+            </div>
+            
+            <div class="mt-10 flex justify-center gap-6 flex-wrap reveal delay-3">
+                <!-- تليجرام - جروب شادو -->
+                <a href="https://t.me/Shadow_Dev_2007" target="_blank" rel="noopener">
+                    <img src="https://c.top4top.io/p_3628yick41.jpg" class="social-icon" alt="Telegram">
+                </a>
+                
+                <!-- واتساب - رقمي -->
+                <a href="https://wa.me/201009341792" target="_blank" rel="noopener">
+                    <img src="https://d.top4top.io/p_36281kfzi1.jpg" class="social-icon" alt="WhatsApp">
+                </a>
+                
+                <!-- يوتيوب - قناة شادو -->
+                <a href="https://www.youtube.com/@Shadow-Dev-2007" target="_blank" rel="noopener">
+                    <img src="https://e.top4top.io/p_3628hmaex1.jpg" class="social-icon" alt="YouTube">
+                </a>
+                
+                <!-- جتهب - جتهب بتاعي -->
+                <a href="https://github.com/X5Coder" target="_blank" rel="noopener">
+                    <img src="https://f.top4top.io/p_36284btta1.jpg" class="social-icon" alt="GitHub">
+                </a>
+            </div>
+            
+            <div class="mt-12 pt-6 border-t border-gray-200 text-center">
+                <p class="text-sm text-[var(--gray)]">الموقع الرسمي والوحيد للمطور X5Coder • جميع الحقوق محفوظة © 2024</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const audio = document.getElementById('anthem');
+        let audioPlayed = false;
+        const tryPlay = () => {
+            if (audioPlayed) return;
+            audio.play().then(() => {
+                audioPlayed = true;
+            }).catch(() => {});
+        };
+        window.addEventListener('load', () => setTimeout(tryPlay, 400));
+        ['click','touchstart','scroll','keydown'].forEach(ev => window.addEventListener(ev, tryPlay, {once:true}));
+        
+        const stopAudio = () => {
+            audio.pause();
+            audio.currentTime = 0;
+        };
+        window.addEventListener('pagehide', stopAudio);
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) stopAudio();
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    entry.target.classList.remove('hide');
+                } else {
+                    entry.target.classList.add('hide');
+                    entry.target.classList.remove('show');
+                }
+            });
+        }, {threshold: 0.2});
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        const emailCard = document.getElementById('copy-email');
+        if (emailCard) {
+            emailCard.style.cursor = 'pointer';
+            emailCard.addEventListener('click', (e) => {
+                e.preventDefault();
+                navigator.clipboard.writeText('lava4ggaming@gmail.com').then(() => {
+                    const original = emailCard.innerHTML;
+                    emailCard.innerHTML = '<span class="text-green-500 font-bold">✓ تم نسخ البريد</span>';
+                    setTimeout(() => emailCard.innerHTML = original, 1800);
+                });
+            });
+        }
+    </script>
+</body>
+</html>
