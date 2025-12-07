@@ -1,12 +1,12 @@
 html
-<div align="center">🌟Welcome to My Account 5XCoder🌟</div>
+<div align="center">🌟Welcome to My Account X5Coder🌟</div>
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=300&section=header&text=5XCoder&fontSize=50&fontAlignY=35&desc=Shadow%20Developer%20|%20Problem%20Solver%20|%20Code%20Artist&descAlignY=55&descAlign=50&animation=twinkling" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=300&section=header&text=X5Coder&fontSize=50&fontAlignY=35&desc=Shadow%20Developer%20|%20Problem%20Solver%20|%20Code%20Artist&descAlignY=55&descAlign=50&animation=twinkling" />
 </div>
 
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=50&duration=2500&pause=800&color=FF0000&center=true&vCenter=true&repeat=true&width=800&height=120&lines=5XCoder;💻+Software+Engineer;🚀+Prompt+Engineer;🌐+App+Developer" alt="5XCoder Animated Typing" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=50&duration=2500&pause=800&color=FF0000&center=true&vCenter=true&repeat=true&width=800&height=120&lines=X5Coder;💻+Software+Engineer;🚀+Prompt+Engineer;🌐+App+Developer" alt="X5Coder Animated Typing" />
 </div>
 
 
@@ -14,24 +14,24 @@ html
 
 <div align="center">
   
-  ![Profile Views](https://komarev.com/ghpvc/?username=5XCoder&color=00d9ff&style=for-the-badge&label=👁️+PROFILE+VIEWS)
-  [![GitHub followers](https://img.shields.io/github/followers/5XCoder?label=👥+FOLLOWERS&style=for-the-badge&color=00d9ff&labelColor=0d1117)](https://github.com/5XCoder)
-  [![GitHub stars](https://img.shields.io/github/stars/5XCoder?label=⭐+TOTAL+STARS&style=for-the-badge&color=ffd700&labelColor=0d1117)](https://github.com/5XCoder)
+  ![Profile Views](https://komarev.com/ghpvc/?username=X5Coder&color=00d9ff&style=for-the-badge&label=👁️+PROFILE+VIEWS)
+  [![GitHub followers](https://img.shields.io/github/followers/X5Coder?label=👥+FOLLOWERS&style=for-the-badge&color=00d9ff&labelColor=0d1117)](https://github.com/X5Coder)
+  [![GitHub stars](https://img.shields.io/github/stars/X5Coder?label=⭐+TOTAL+STARS&style=for-the-badge&color=ffd700&labelColor=0d1117)](https://github.com/X5Coder)
 
 </div>
 
-<img width="100%" src="https://github.com/5XCoder/5XCoder/blob/main/assets/divider.gif" alt="Divider"/>
+<img width="100%" src="https://github.com/X5Coder/X5Coder/blob/main/assets/divider.gif" alt="Divider"/>
 
-## 🔬 5XCoder.exe - System Analysis
+## 🔬 X5Coder.exe - System Analysis
 
 ```bash
-┌─[5XCoder@shadow-dev]─[~]
+┌─[X5Coder@shadow-dev]─[~]
 └──╼ $ cat /etc/developer.conf
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║                      🎯 SYSTEM SPECIFICATIONS                                                ║
 ╠══════════════════════════════════════════════════════════════════╣
-║  👤 Developer: 5XCoder                                                                      ║
+║  👤 Developer: X5Coder                                                                      ║
 ║  📍 Location: Cairo 🇪🇬.                                                                          ║
 ║  🧠 Specialization: Prompt Engineering                                                          ║
 ║  🎂 Active Since: 没关系                                                                          ║
@@ -41,7 +41,7 @@ html
 
 class Developer {
     constructor() {
-        this.name = "5XCoder";
+        this.name = "X5Coder";
         this.role = "Shadow Developer";
         this.languages = ["Arabic", "English"];
         this.currentFocus = "Building the future, one line at a time";
@@ -75,27 +75,27 @@ const developer = new Developer();
 console.log(developer.getCurrentStatus());
 ```
 
-<img width="100%" src="https://github.com/5XCoder/5XCoder/blob/main/assets/divider.gif" alt="Divider"/>
+<img width="100%" src="https://github.com/X5Coder/X5Coder/blob/main/assets/divider.gif" alt="Divider"/>
 
 📊 GitHub Analytics & Performance Metrics
 
 <div align="center">
-  <img height="200em" src="https://github-readme-stats.vercel.app/api?username=5XCoder&show_icons=true&theme=highcontrast&count_private=true&hide_border=true&bg_color=0d1117&title_color=00d9ff&icon_color=00d9ff&text_color=ffffff&custom_title=🚀+GitHub+Stats"/>
-  <img height="200em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=5XCoder&layout=compact&theme=highcontrast&hide_border=true&bg_color=0d1117&title_color=00d9ff&text_color=ffffff&langs_count=8&custom_title=💻+Most+Used+Languages"/>
+  <img height="200em" src="https://github-readme-stats.vercel.app/api?username=X5Coder&show_icons=true&theme=highcontrast&count_private=true&hide_border=true&bg_color=0d1117&title_color=00d9ff&icon_color=00d9ff&text_color=ffffff&custom_title=🚀+GitHub+Stats"/>
+  <img height="200em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=X5Coder&layout=compact&theme=highcontrast&hide_border=true&bg_color=0d1117&title_color=00d9ff&text_color=ffffff&langs_count=8&custom_title=💻+Most+Used+Languages"/>
 </div>
 
 <div align="center">
-  <img width="90%" src="https://github-readme-streak-stats.herokuapp.com/?user=5XCoder&theme=highcontrast&hide_border=true&background=0d1117&stroke=00d9ff&ring=00d9ff&fire=ff6b35&currStreakLabel=00d9ff&sideLabels=ffffff&currStreakNum=ffffff&sideNums=ffffff&dates=8cc8ff" alt="GitHub Streak" />
+  <img width="90%" src="https://github-readme-streak-stats.herokuapp.com/?user=X5Coder&theme=highcontrast&hide_border=true&background=0d1117&stroke=00d9ff&ring=00d9ff&fire=ff6b35&currStreakLabel=00d9ff&sideLabels=ffffff&currStreakNum=ffffff&sideNums=ffffff&dates=8cc8ff" alt="GitHub Streak" />
 </div>
 
 <div align="center">
-  <img width="90%" src="https://github-readme-activity-graph.vercel.app/graph?username=5XCoder&theme=high-contrast&bg_color=0d1117&color=00d9ff&line=00d9ff&point=ff6b35&area=true&hide_border=true&custom_title=📈+Contribution+Graph" alt="GitHub Activity Graph" />
+  <img width="90%" src="https://github-readme-activity-graph.vercel.app/graph?username=X5Coder&theme=high-contrast&bg_color=0d1117&color=00d9ff&line=00d9ff&point=ff6b35&area=true&hide_border=true&custom_title=📈+Contribution+Graph" alt="GitHub Activity Graph" />
 </div>
 
 🏆 Achievement Vault
 
 <div align="center">
-  <img width="90%" src="https://github-profile-trophy.vercel.app/?username=5XCoder&theme=onestar&no-frame=true&no-bg=true&margin-w=4&column=7&title=Stars,Followers,Commits,Repositories,MultipleLang,PullRequest,Issues" alt="GitHub Trophies" />
+  <img width="90%" src="https://github-profile-trophy.vercel.app/?username=X5Coder&theme=onestar&no-frame=true&no-bg=true&margin-w=4&column=7&title=Stars,Followers,Commits,Repositories,MultipleLang,PullRequest,Issues" alt="GitHub Trophies" />
 </div>
 
 🛠️ Technical Arsenal & Weaponry
@@ -135,7 +135,7 @@ console.log(developer.getCurrentStatus());
 📈 Real-time Coding Stats
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=5XCoder&theme=highcontrast&hide_border=true&bg_color=0d1117&title_color=00d9ff&text_color=ffffff&icon_color=00d9ff&custom_title=⏱️+Weekly+Coding+Activity" alt="WakaTime Stats" />
+  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=X5Coder&theme=highcontrast&hide_border=true&bg_color=0d1117&title_color=00d9ff&text_color=ffffff&icon_color=00d9ff&custom_title=⏱️+Weekly+Coding+Activity" alt="WakaTime Stats" />
 </div>
 
 🌐 Digital Presence & Community
@@ -162,7 +162,7 @@ console.log(developer.getCurrentStatus());
 
 🌍 Professional Hub
 
-<a href="https://5xcode.github.io/rdp-vnc/">
+<a href="https://X5Code.github.io/rdp-vnc/">
   <img src="https://img.shields.io/badge/🎓_ACADEMY-000000?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Academy"/>
 </a>
 
@@ -213,7 +213,7 @@ System Architecture Vulnerability Assessment Microservices Android Development
 💭 Developer Philosophy
 
 <div align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark&border=true&quote=Code%20is%20poetry%20written%20in%20logic%2C%20and%20every%20bug%20is%20a%20mystery%20waiting%20to%20be%20solved.&author=5XCoder" alt="Philosophy Quote" />
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark&border=true&quote=Code%20is%20poetry%20written%20in%20logic%2C%20and%20every%20bug%20is%20a%20mystery%20waiting%20to%20be%20solved.&author=X5Coder" alt="Philosophy Quote" />
 </div>
 
 🔮 Interactive Elements
@@ -223,7 +223,7 @@ System Architecture Vulnerability Assessment Microservices Android Development
 
 ```mermaid
 timeline
-    title 5XCoder's Coding Journey
+    title X5Coder's Coding Journey
     
     2007    : Started Programming
             : Basic HTML/CSS
@@ -275,7 +275,7 @@ timeline
 🐍 Contribution Snake
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/5XCoder/5XCoder/output/github-contribution-grid-snake-dark.svg" alt="Snake Animation" />
+  <img src="https://raw.githubusercontent.com/X5Coder/X5Coder/output/github-contribution-grid-snake-dark.svg" alt="Snake Animation" />
 </div>
 
 🎊 Fun Facts & Easter Eggs
@@ -298,7 +298,7 @@ timeline
 
 Always ready to collaborate on innovative projects and new technical challenges 🚀
 
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=5XCoder.5XCoder&left_color=00d9ff&right_color=ff6b35&left_text=🌟+زائر+رقم" alt="Visitor Badge"/>
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=X5Coder.X5Coder&left_color=00d9ff&right_color=ff6b35&left_text=🌟+زائر+رقم" alt="Visitor Badge"/>
 
 </div>
 
